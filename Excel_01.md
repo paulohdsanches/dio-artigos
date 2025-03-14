@@ -22,6 +22,7 @@ A primeira vista pode até parecer rico em dados por conter muitas informações
 Uma das principais características dos dados desestruturados é o que chamamos de 'crescer para o lado'. Se isso acontece com sua base de dados, é sinal de que você está no caminho certo ao ler este artigo buscando compreender os princípios básicos da organização de dados no Excel.
 
 Repare na imagem abaixo que para cada mês que precisar ser acrescentado no futuro, será necessário inserir uma nova coluna. Assim crescendo para o lado:
+
 ![alt text](image-1.png)
 
 [saiba mais -->](https://www.dataside.com.br/dataside-community/big-data/tipos-de-dados-estruturados-semi-estruturados-e-nao-estruturados)
@@ -32,6 +33,7 @@ Dados estruturados seguem uma série de boas práticas que facilitam a organiza�
 A principal característica dos dados estruturados é ter suas informações no formato de tabela, onde cada coluna representa o 'tipo de informação' e cada linha representa um registro. É uma boa prática nomear os cabeçalhos das colunas de forma a descrever os dados contidos nela.
 
 Seguindo o mesmo exemplo anterior, agora temos:
+
 ![alt text](image-2.png)
 
 Repare que nesse caso toda vez que for inserido um novo registro, ele virá na linha seguinte a última da tabela, sendo assim a tabela 'cresce para baixo'. Lembre-se disso: crescer para baixo é sempre a melhor escolha.
@@ -50,7 +52,6 @@ A primeira etapa do ETL é a 'Extração', ou a obtenção dos dados podendo ser
 
 O Power Query nos permite extrair dados de MUITAS fontes diferentes.
 
-
 ##### ✍ Mão na massa
 No Excel, vá para:
 
@@ -61,14 +62,17 @@ Escolha entre uma enorme variedade de fontes disponíveis.
 Seguiremos com nosso exemplo do Excel. Então selecione:
     
     Dados - Obter Dados - De Arquivo - Do Excel Pasta de Trabalho
+
 ![alt text](image-3.png)
 
 Navegue até a pasta onde sua planilha está salva:
 
     Selecione o arquivo - Clique em Importar
+
 ![alt text](image-4.png)
 
 Temos diferentes 'bases de dados' dentro do nosso arquivo, é aqui que selecionamos com qual delas queremos trabalhar. Veja que há diferença entre objetos tabela e as planilhas(abas) do nosso arquivo.
+
 ![alt text](image.png)
 
 O objeto tabela é apresentado com o ícone de tabela com uma barrinha azul no cabeçalho, já as planilhas apresentam o ícone de planilha com 2 abinhas logo abaixo.
@@ -91,11 +95,13 @@ A transformação envolve a limpeza e a modificação dos dados para que estejam
 O objetivo deste artigo não é nos aprofundarmos no uso da ferramenta Power Query, mas a título de exemplo das diferenças entre Dados Estruturados x Dados Desestruturados, vejamos:
 
 Ao realizarmos a 'Extração' dos Dados Desestruturados:
+
 ![alt text](image-5.png)
 
 O próprio Power Query teve dificuldades em identificar e organizar as informações, podemos ver que os cabeçalhos das colunas não foram devidamente reconhecidos, existem muitos campos 'null' (vazios) na tabela e as informações estão apresentadas de uma forma um tanto quanto caótica.
 
 Já para a 'Extração' dos Dados Estruturados, temos:
+
 ![alt text](image-6.png)
 
 Perceba que o Power Query foi capaz de identificar e organizar as informações de forma muito mais limpa e coesa.
@@ -105,7 +111,9 @@ Respeitando o cabeçalho das colunas, os tipos de dados. E agora não temos nenh
 #### L - Load (Carregamento)
 A última etapa do ETL é a de carregar os dados que transformamos anteriormente de volta para o Excel, onde podemos utilizá-los para criar tabelas dinâmicas, gráficos, dashboards, segmentações e outras análises.
 
-Para tal, basta clicarmos no botão 'Fechar e Carregar' ![alt text](image-7.png)
+Para tal, basta clicarmos no botão 'Fechar e Carregar' 
+
+![alt text](image-7.png)
 
 [saiba mais -->](https://learn.microsoft.com/pt-br/power-query/power-query-what-is-power-query)
 
@@ -117,28 +125,39 @@ Conheça o Power Query e aplique as mesmas soluções de forma muito mais fácil
 
 ### 📚 Conhecendo um pouco mais do Power Query
 O Power Query abre em uma janela a parte do Excel, só é possível voltar a trabalhar na pasta de trabalho do Excel após fechar o editor de consultas do Power Query.
+
 ![alt text](image-9.PNG)
 
 O editor de consultas do Power Query é muito parecido com os aplicativos do Microsoft Office, tornando-o muito intuitivo e familiar mesmo aos usuários inexperientes.
 
 #### Menu - Página Inicial
+
 ![alt text](image-10.PNG)
+
 Contém as principais funcionalidades.
 
 #### Menu - Transformar
+
 ![alt text](image-11.PNG)
+
 Como o nome já diz, aqui encontramos opções para transformar os dados da nossa tabela geralmente utilizada quando não queremos adicionar uma nova coluna.
 
 #### Menu - Adicionar Coluna
+
 ![alt text](image-12.PNG)
+
 As funcionalidades aqui serão aplicadas adicionando uma nova coluna em nossa tabela, com base em dados de outras colunas
 
 #### Menu - Exibição
+
 ![alt text](image-13.PNG)
+
 Tal qual no Excel, aqui podemos optar por aquilo que será exibido ou não na janela.
 
 #### Barra de Fórmulas
+
 ![alt text](image-14.PNG)
+
 Muito similar a barra de fórmulas do Excel. Porém aqui não utilizamos fórmulas de Excel, mas sim a linguagem de programação do Power Query chamada [Linguagem M](https://learn.microsoft.com/pt-br/powerquery-m/).
 
 Mas não se preocupe, não é necessário saber nada de Linguagem M para trabalhar com o Power Query inicialmente. Aqui fazemos tudo com simples cliques de mouse e o próprio Power Query cria o código por trás.
@@ -146,6 +165,7 @@ Mas não se preocupe, não é necessário saber nada de Linguagem M para trabalh
 Claro que se quiser se destacar ainda mais e fazer transformações ainda mais poderosas em seus dados, sugiro se aprofundar um pouco mais na Linguagem M.
 
 #### Consultas
+
 ![alt text](image-15.PNG)
 
 Ao lado esquerdo ficam as consultas (é assim que o Power Query chama os dados que importamos na etapa de Extração do ETL)
@@ -155,6 +175,7 @@ Repare que embora tenhamos feito a extração dos dados desestruturados em plani
 Que tal renomear nossa consulta 'Tabela2' para um nome mais fácil de entender? Aproveito pra deixar aqui a dica, sempre utilize nomes intuitivos que façam referencia direta aos seus dados, assim fica muito mais fácil aplicar "manutenções" futuras.
 
 Para renomear basta clicarmos com o botão direito do mouse e selecionar a opção 'Renomear'
+
 ![alt text](image-16.PNG)
 
 Ficamos assim:
@@ -163,9 +184,11 @@ Ficamos assim:
 
 #### Visualização
 Mais centralizado na tela, temos a visualização dos dados contidos na consulta selecionada
+
 ![alt text](image-18.png)
 
 Vale ressaltar que a visualização da 'Qualidade da coluna' deve ser ativada na guia 'Exibir', pois a mesma vem desabilitada por padrão.
+
 ![alt text](image-19.png)
 
 #### Config. Consulta
